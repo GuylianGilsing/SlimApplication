@@ -1,7 +1,7 @@
 <?php
-namespace App\Core;
+namespace App\Core\Views;
 
-use App\Interfaces\ViewInterface;
+use App\Interfaces\Views\ViewInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 use DI\Container;

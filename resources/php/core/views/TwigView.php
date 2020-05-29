@@ -1,11 +1,7 @@
 <?php
-namespace App\Core;
+namespace App\Core\Views;
 
-use App\Interfaces\ViewInterface;
-use Psr\Http\Message\ServerRequestInterface as Request;
-
-use App\Core\View;
-use DI\Container;
+use App\Core\Views\View;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 

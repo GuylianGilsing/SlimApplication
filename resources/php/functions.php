@@ -1,5 +1,4 @@
 <?php
-namespace App;
 
 /**
  * Returns the server base e.g: http://example.com/
