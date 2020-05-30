@@ -4,7 +4,7 @@ namespace App;
 use App\Core\Session\Session;
 use App\Core\Session\FlashMessage;
 
-require_once __DIR__.'/../resources/php/functions.php';
+require_once __DIR__.'/../resources/app/functions.php';
 
 StartSession();
 

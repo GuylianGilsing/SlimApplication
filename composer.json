@@ -12,11 +12,11 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\Core\\": "resources/php/core",
-            "App\\Core\\Views\\": "resources/php/core/views",
-            "App\\Core\\Session\\": "resources/php/core/session",
-            "App\\Interfaces\\": "resources/php/interfaces",
-            "App\\Interfaces\\Views\\": "resources/php/interfaces/views",
+            "App\\Core\\": "resources/app/core",
+            "App\\Core\\Views\\": "resources/app/core/views",
+            "App\\Core\\Session\\": "resources/app/core/session",
+            "App\\Interfaces\\": "resources/app/interfaces",
+            "App\\Interfaces\\Views\\": "resources/app/interfaces/views",
             "App\\Controllers\\": "app/controllers",
             "App\\Middleware\\": "app/middleware",
             "App\\Models\\": "app/models"
