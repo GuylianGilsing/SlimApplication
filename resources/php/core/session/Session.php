@@ -73,6 +73,11 @@ class Session
             ];
         }
 
+        if(!isset($_SESSION['app_sessions_with_timeout']))
+            $_SESSION['app_sessions_with_timeout'] = [];
+
+        $_SESSION['app_sessions_with_timeout'][] = $this->name;
+
         $_SESSION[$this->name] = $this->data;
         return true;
     }
@@ -157,7 +162,7 @@ class Session
             {
                 if(self::sessionHasExpired($name))
                 {
-                    unset($_SESSION[$name]);
+                    self::removeTimedOutSession($name);
                     return null;
                 }
 
@@ -167,15 +172,83 @@ class Session
                 $session->setTimeout($timeoutAmount);
             }
 
-            foreach($_SESSION[$name] as $key => $value)
+            if(count($_SESSION[$name]) > 0)
             {
-                $session->setKey($key, $value);
+                foreach($_SESSION[$name] as $key => $value)
+                {
+                    $session->setKey($key, $value);
+                }
             }
 
             $session->update();
         }
 
         return $session;
+    }
+
+    /**
+     * Removes all timed out session.
+     */
+    public static function removeAllTimedOutSessions()
+    {
+        if(!isset($_SESSION['app_sessions_with_timeout']))
+            return;
+
+        if(count($_SESSION['app_sessions_with_timeout']) <= 0)
+        {
+            unset($_SESSION['app_sessions_with_timeout']);
+            return;
+        }
+
+        foreach($_SESSION['app_sessions_with_timeout'] as $name)
+        {
+            if(isset($_SESSION[$name]))
+            {
+                if(self::sessionHasExpired($name))
+                {
+                    self::removeTimedOutSession($name);
+                }
+                else
+                {
+                    self::refreshSessionTimeout($name);
+                }
+            }
+        }
+    }
+
+    /**
+     * Refreshes the timeout that is set on a session.
+     * 
+     * @param string $name The name of the session.
+     */
+    public static function refreshSessionTimeout(string $name)
+    {
+        if(!isset($_SESSION[$name]))
+            return;
+
+        if(count($_SESSION[$name]) <= 0)
+            return;
+
+        // Check the timeout
+        if(isset($_SESSION[$name]['app_session_timeout']))
+        {
+            if(self::sessionHasExpired($name))
+            {
+                self::removeTimedOutSession($name);
+                return;
+            }
+
+            if(!isset($_SESSION[$name]['app_session_timeout']['duration']))
+                return;
+
+            $timeoutAmount =
+                $_SESSION[$name]['app_session_timeout']['duration'];
+
+            $_SESSION[$name]['app_session_timeout'] = [
+                'duration' => $timeoutAmount,
+                'initialized' => time()
+            ];
+        }
     }
 
     /**
@@ -203,5 +276,22 @@ class Session
             return true;
 
         return false;
+    }
+
+    /**
+     * Removes a timed out session.
+     * 
+     * @param string $name The name of the session.
+     */
+    private static function removeTimedOutSession(string $name)
+    {
+        // Unset the session and remove it from the global -
+        // timeout session
+        unset($_SESSION[$name]);
+
+        $targetKey = 'app_sessions_with_timeout';
+        $indexToRemove = array_search($name, $_SESSION[$targetKey]);
+        if($indexToRemove !== false)
+            array_splice($_SESSION[$targetKey], $indexToRemove, 1);
     }
 }
