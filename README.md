@@ -46,3 +46,8 @@ This framework enables your application to makes use of:
 This package enables you to make use of database migrations and seeders.
 
 [Read more about Phinx](https://phinx.org/)
+
+## Respect/Validation
+A validation library.
+
+[Read more about Respect/Validation](https://github.com/Respect/Validation)
