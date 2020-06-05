@@ -22,6 +22,13 @@ body, html{
     font-size: 16px;
 }
 
+// Small sized screens (Phones)
+@media only screen and (max-width: 479px){
+    :root{
+        font-size: 14px;
+    }
+}
+
 @import './modules/colors';
 @import './modules/typography';
 @import './modules/buttons';
