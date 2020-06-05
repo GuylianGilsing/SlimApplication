@@ -1,7 +1,7 @@
 <?php
-namespace App\Core;
+namespace App\Core\Views;
 
-use App\Interfaces\ViewInterface;
+use App\Interfaces\Views\ViewInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 use DI\Container;
@@ -69,6 +69,8 @@ class View implements ViewInterface
         // Add the CSRF dependency to the view
         if($this->container !== null && $this->request !== null)
         {
+            $this->variables['baseURL'] = ServerBase();
+
             if($this->container->has('csrf'))
             {
                 $csrf = $this->container->get('csrf');

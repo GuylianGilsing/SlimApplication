@@ -5,7 +5,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
 use App\Controllers\BaseController;
-use App\Core\TwigView;
+use App\Core\Views\TwigView;
 
 class HelloWorldController extends BaseController
 {

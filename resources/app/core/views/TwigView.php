@@ -1,11 +1,7 @@
 <?php
-namespace App\Core;
+namespace App\Core\Views;
 
-use App\Interfaces\ViewInterface;
-use Psr\Http\Message\ServerRequestInterface as Request;
-
-use App\Core\View;
-use DI\Container;
+use App\Core\Views\View;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -32,7 +28,7 @@ class TwigView extends View
         parent::load();
 
         // Load the filesystem and instantiate a new twig environment
-        $loader = new FilesystemLoader(VIEW_DIR);
+        $loader = new FilesystemLoader(VIEW_DIR.'/twig/');
         $this->view = new Environment($loader);
     }
 
