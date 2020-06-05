@@ -1,5 +1,5 @@
 <?php
-namespace App\Core\Session;
+namespace App\Core\Sessions;
 
 class Session
 {
@@ -71,12 +71,12 @@ class Session
                 'duration' => $this->timeout,
                 'initialized' => time()
             ];
+
+            if(!isset($_SESSION['app_sessions_with_timeout']))
+                $_SESSION['app_sessions_with_timeout'] = [];
+
+            $_SESSION['app_sessions_with_timeout'][] = $this->name;
         }
-
-        if(!isset($_SESSION['app_sessions_with_timeout']))
-            $_SESSION['app_sessions_with_timeout'] = [];
-
-        $_SESSION['app_sessions_with_timeout'][] = $this->name;
 
         $_SESSION[$this->name] = $this->data;
         return true;

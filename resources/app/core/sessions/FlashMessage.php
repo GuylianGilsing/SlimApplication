@@ -1,5 +1,5 @@
 <?php
-namespace App\Core\Session;
+namespace App\Core\Sessions;
 
 class FlashMessage
 {

@@ -1,8 +1,8 @@
 <?php
 namespace App;
 
-use App\Core\Session\Session;
-use App\Core\Session\FlashMessage;
+use App\Core\Sessions\Session;
+use App\Core\Sessions\FlashMessage;
 
 require_once __DIR__.'/../resources/app/functions.php';
 

@@ -28,7 +28,7 @@ class TwigView extends View
         parent::load();
 
         // Load the filesystem and instantiate a new twig environment
-        $loader = new FilesystemLoader(VIEW_DIR);
+        $loader = new FilesystemLoader(VIEW_DIR.'/twig/');
         $this->view = new Environment($loader);
     }
 
