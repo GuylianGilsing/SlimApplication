@@ -1,9 +1,9 @@
 <?php
+namespace App\Database\Seeds;
 
+use Illuminate\Database\Capsule\Manager as Capsule;
 
-use Phinx\Seed\AbstractSeed;
-
-class UserSeed extends AbstractSeed
+class UserSeed
 {
     /**
      * Run Method.
@@ -13,18 +13,12 @@ class UserSeed extends AbstractSeed
      * More information on writing seeders is available here:
      * https://book.cakephp.org/phinx/0/en/seeding.html
      */
-    public function run()
+    public static function run()
     {
-        $data = [
-            [
-                'name' => "admin",
-                'email' => "admin@example.com",
-                'password' => password_hash('admin', PASSWORD_BCRYPT),
-            ]
-        ];
-
-        $usersTable = $this->table('users');
-        $usersTable->insert($data)
-                    ->saveData();
+        Capsule::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'admin@example.com',
+            'password' => password_hash('admin', PASSWORD_BCRYPT),
+        ]);
     }
 }

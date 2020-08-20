@@ -5,9 +5,12 @@ This boilerplate comes with the following:
 * Composer autoloading
 * .env file loading
 * Laravel eloquent ORM
+* Laravel migrations
 * PHP-DI dependency container
 * Slim 4 base project
 * Slim (global) CSRF protection
+* Basic frontend routing system and folder structure
+* Basic API routing system and folder structure
 * Custom content tools class
 * Custom session class
 * Custom flash message class
@@ -22,7 +25,6 @@ This boilerplate comes with the following:
         - [Vlucas/PHPDotenv](#vlucasphpdotenv)
         - [Illuminate/Database](#illuminatedatabase)
         - [Slim 4](#slim-4)
-        - [Phinx](#phinx)
         - [Respect/Validation](#respectvalidation)
     - [Frontend packages](#frontend-packages)
         - [Gulp](#gulp)
@@ -78,11 +80,6 @@ This framework enables your application to makes use of:
 * Dependency container
 
 [Read more about Slim 4](http://www.slimframework.com/docs/v4/)
-
-### Phinx
-This package enables you to make use of database migrations and seeders.
-
-[Read more about Phinx](https://phinx.org/)
 
 ### Respect/Validation
 This library makes validation a breeze.
