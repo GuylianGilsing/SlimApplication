@@ -68,6 +68,7 @@ This package enables your application to make use of the models and query builde
 Documentation can be found at the offical Laravel website.
 
 * [Models](https://laravel.com/docs/7.x/eloquent)
+* [Migrations](https://laravel.com/docs/7.x/migrations)
 * [Query builder](https://laravel.com/docs/7.x/queries)
 
 [Read more about this package](https://github.com/illuminate/database)
