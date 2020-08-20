@@ -111,6 +111,7 @@ The view classes implement the App\Interfaces\Views\ViewInterface interface. It 
 
 When passed the controller's request and dependency container, your view file will have access to the following variables:
 * baseURL (The base of the server, e.g: https://example.com)
+* currentPath (The current path of the page, e.g: /examples)
 * csrf (Some html markup that contains the necessary fields for a CSRF protected form request)
 
 **Important:** Views have their own base directories. This makes your application a bit more clean and structured since all views will be seperated based off of their type (PHP or Twig). Because of these base directories, any attempt of loading views outside of them is not encouraged (and impossible for twig templates).

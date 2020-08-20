@@ -71,7 +71,7 @@ class View implements ViewInterface
         if($this->request != null)
         {
             // Add the current path to the variables that will be sent to the view
-            $pageURI = $this->variables['pageName'] = $this->request->getUri();
+            $pageURI = $this->request->getUri();
             $this->variables['currentPath'] = $pageURI->getPath();
 
             // Add the CSRF dependency to the view
