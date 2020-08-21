@@ -15,7 +15,7 @@ This boilerplate comes with the following:
 * Custom session class
 * Custom flash message class
 * Custom error handling class (using respect/validation)
-* Gulp
+* Webpack
 * Sass (.scss files) frontend workflow
 
 # Table of contents
@@ -27,7 +27,7 @@ This boilerplate comes with the following:
         - [Slim 4](#slim-4)
         - [Respect/Validation](#respectvalidation)
     - [Frontend packages](#frontend-packages)
-        - [Gulp](#gulp)
+        - [Webpack](#webpack)
 - [Packaged classes and interfaces](#packaged-classes-and-interfaces)
     - [Views](#views)
     - [Sessions](#sessions)
@@ -89,13 +89,20 @@ This library makes validation a breeze.
 
 ## Frontend packages
 
-### Gulp
-Gulp is a task runner that will take Sass (.scss) files and compile them into one minified file (app.min.css)
+### Webpack
+Webpack is a module bundler that turns our code and assets into static assets.
 
-Gulp uses the following packages:
-* gulp-rename
-* gulp-sass
-* node-sass
+Webpack uses the following packages:
+* Axios
+* clean-webpack-plugin (DEV)
+* css-loader (DEV)
+* sass (DEV)
+* sass-loader (DEV)
+* webpack-cli (DEV)
+* extract-loader (DEV)
+* mini-css-extract-plugin (DEV)
+
+(DEV) indicates that that package is added as a dev-dependency
 
 # Packaged classes and interfaces
 This boilerplate has some pre-written classes and interfaces that will hopefully make developing your application a bit easier.
