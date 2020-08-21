@@ -109,7 +109,7 @@ class ContentTools
         $cleanedData = htmlentities($cleanedData);
 
         // Convert all special chars to htmlentities.
-        $cleanedData = htmlspecialchars($cleanedData);
+        $cleanedData = htmlspecialchars($cleanedData, ENT_COMPAT | ENT_HTML401, "UTF-8");
 
         return $cleanedData;
     }

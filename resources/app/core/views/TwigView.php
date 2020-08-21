@@ -42,9 +42,7 @@ class TwigView extends View
         $content = "[ERROR] View is not initialized.";
 
         if($this->view !== null)
-        {
             $content = $this->view->render($this->filename, $this->variables);
-        }
 
         return $content;
     }

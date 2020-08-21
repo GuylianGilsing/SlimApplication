@@ -66,28 +66,35 @@ class View implements ViewInterface
      */
     public function load()
     {
-        // Add the CSRF dependency to the view
-        if($this->container !== null && $this->request !== null)
+        $this->variables['baseURL'] = ServerBase();
+
+        if($this->request != null)
         {
-            $this->variables['baseURL'] = ServerBase();
+            // Add the current path to the variables that will be sent to the view
+            $pageURI = $this->request->getUri();
+            $this->variables['currentPath'] = $pageURI->getPath();
 
-            if($this->container->has('csrf'))
+            // Add the CSRF dependency to the view
+            if($this->container !== null)
             {
-                $csrf = $this->container->get('csrf');
-                $nameKey = $csrf->getTokenNameKey();
-                $valueKey = $csrf->getTokenValueKey();
-                $name = $this->request->getAttribute($nameKey);
-                $value = $this->request->getAttribute($valueKey);
-
-                $this->variables['csrfMeta'] = '
-                    <meta name="'.$nameKey.'" content="'.$name.'">
-                    <meta name="'.$valueKey.'" content="'.$value.'">
-                ';
-
-                $this->variables['csrfForm'] = '
-                    <input type="hidden" name="'.$nameKey.'" value="'.$name.'">
-                    <input type="hidden" name="'.$valueKey.'" value="'.$value.'">
-                ';
+                if($this->container->has('csrf'))
+                {
+                    $csrf = $this->container->get('csrf');
+                    $nameKey = $csrf->getTokenNameKey();
+                    $valueKey = $csrf->getTokenValueKey();
+                    $name = $this->request->getAttribute($nameKey);
+                    $value = $this->request->getAttribute($valueKey);
+    
+                    $this->variables['csrfMeta'] = '
+                        <meta name="'.$nameKey.'" content="'.$name.'">
+                        <meta name="'.$valueKey.'" content="'.$value.'">
+                    ';
+    
+                    $this->variables['csrfForm'] = '
+                        <input type="hidden" name="'.$nameKey.'" value="'.$name.'">
+                        <input type="hidden" name="'.$valueKey.'" value="'.$value.'">
+                    ';
+                }
             }
         }
     }

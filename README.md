@@ -5,9 +5,12 @@ This boilerplate comes with the following:
 * Composer autoloading
 * .env file loading
 * Laravel eloquent ORM
+* Laravel migrations
 * PHP-DI dependency container
 * Slim 4 base project
 * Slim (global) CSRF protection
+* Basic frontend routing system and folder structure
+* Basic API routing system and folder structure
 * Custom content tools class
 * Custom session class
 * Custom flash message class
@@ -22,7 +25,6 @@ This boilerplate comes with the following:
         - [Vlucas/PHPDotenv](#vlucasphpdotenv)
         - [Illuminate/Database](#illuminatedatabase)
         - [Slim 4](#slim-4)
-        - [Phinx](#phinx)
         - [Respect/Validation](#respectvalidation)
     - [Frontend packages](#frontend-packages)
         - [Gulp](#gulp)
@@ -66,6 +68,7 @@ This package enables your application to make use of the models and query builde
 Documentation can be found at the offical Laravel website.
 
 * [Models](https://laravel.com/docs/7.x/eloquent)
+* [Migrations](https://laravel.com/docs/7.x/migrations)
 * [Query builder](https://laravel.com/docs/7.x/queries)
 
 [Read more about this package](https://github.com/illuminate/database)
@@ -78,11 +81,6 @@ This framework enables your application to makes use of:
 * Dependency container
 
 [Read more about Slim 4](http://www.slimframework.com/docs/v4/)
-
-### Phinx
-This package enables you to make use of database migrations and seeders.
-
-[Read more about Phinx](https://phinx.org/)
 
 ### Respect/Validation
 This library makes validation a breeze.
@@ -113,6 +111,7 @@ The view classes implement the App\Interfaces\Views\ViewInterface interface. It 
 
 When passed the controller's request and dependency container, your view file will have access to the following variables:
 * baseURL (The base of the server, e.g: https://example.com)
+* currentPath (The current path of the page, e.g: /examples)
 * csrf (Some html markup that contains the necessary fields for a CSRF protected form request)
 
 **Important:** Views have their own base directories. This makes your application a bit more clean and structured since all views will be seperated based off of their type (PHP or Twig). Because of these base directories, any attempt of loading views outside of them is not encouraged (and impossible for twig templates).
