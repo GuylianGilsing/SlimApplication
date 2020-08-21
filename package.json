@@ -1,18 +1,33 @@
 {
-  "name": "slim-application-frontend",
+  "name": "SlimApplication",
   "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.1"
-  },
-  "devDependencies": {},
+  "description": "A simple boilerplate PHP app that makes uses of the Slim 4 framework and various other packages.",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuylianGilsing/SlimApplication.git"
+  },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuylianGilsing/SlimApplication/issues"
+  },
+  "homepage": "https://github.com/GuylianGilsing/SlimApplication#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.2.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "extract-loader": "^5.1.0",
+    "mini-css-extract-plugin": "^0.10.0"
+  }
 }
