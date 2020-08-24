@@ -1,41 +1,232 @@
-p, 
-a, 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
-h6,
-div, 
-span, 
-input, 
-label, 
-select, 
-button, 
-textarea, 
-blockquote{
+/*
+
+    This file takes care of text and fonts
+
+*/
+
+p, a, span, div, label, button, input, select, textarea, textarea, h1, h2, h3, h4, h5, h6{
     margin: 0px;
+    color: inherit;
     font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1;
+    font-weight: 400;
+    text-decoration: unset;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    margin-bottom: 0.5rem;
+a{
+    display: inline-block;
 }
 
-h1{font-size: 2.25rem;}
-h2{font-size: 2.05rem;}
-h3{font-size: 1.85rem;}
-h4{font-size: 1.65rem;}
-h5{font-size: 1.45rem;}
-h6{font-size: 1.25rem;}
+p:not(.h1):not(.h2):not(.h3):not(.h4):not(.h5):not(.h6) ~ p{
+    &:not(.h1),
+    &:not(.h2),
+    &:not(.h3),
+    &:not(.h4),
+    &:not(.h5),
+    &:not(.h6),
+    &{
+        margin-top: 0.6rem;
+    }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6{
+    margin-bottom: 0.1rem;
+    display: block;
+    font-weight: 500;
+}
+
+h1, .h1{font-size: 2.8rem;}
+h2, .h2{font-size: 2.4rem;}
+h3, .h3{font-size: 2.2rem;}
+h4, .h4{font-size: 1.8rem;}
+h5, .h5{font-size: 1.4rem;}
+h6, .h6{font-size: 1.2rem;}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+p a,
+a[href]{
+    color: inherit;
+    font-weight: 700;
+    transition: color 0.3s ease;
+
+    &:hover{
+        color: #888;
+    }
+}
+
+.font-thin{font-weight: 100;}
+.font-extralight{font-weight: 200;}
+.font-light{font-weight: 300;}
+.font-normal{font-weight: 400;}
+.font-medium{font-weight: 500;}
+.font-semibold{font-weight: 600;}
+.font-bold{font-weight: 700;}
+.font-extrabold{font-weight: 800;}
+.font-black{font-weight: 900;}
 
 .text-left{text-align: left;}
 .text-center{text-align: center;}
 .text-right{text-align: right;}
+
+// Text colors
+.txt-color-white{
+    color: #fff;
+}
+
+.txt-color-black{
+    color: #000;
+}
+
+.txt-color-red{
+    color: $fusionRed;
+
+    &.txt-color-light{
+        color: lighten($fusionRed, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: darken($fusionRed, $darkenPercentage);
+    }
+}
+
+.txt-color-pink{
+    color: $jigglypuff;
+
+    &.txt-color-light{
+        color: lighten($jigglypuff, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: darken($jigglypuff, $darkenPercentage);
+    }
+}
+
+.txt-color-orange{
+    color: $orangeHibiscus;
+
+    &.txt-color-light{
+        color: lighten($orangeHibiscus, 12%);
+    }
+
+    &.txt-color-dark{
+        color: darken($orangeHibiscus, 15%);
+    }
+}
+
+.txt-color-yellow{
+    color: $flirtatious;
+
+    &.txt-color-light{
+        color: lighten($flirtatious, 12%);
+    }
+
+    &.txt-color-dark{
+        color: darken($flirtatious, 15%);
+    }
+}
+
+.txt-color-green{
+    color: $reptileGreen;
+
+    &.txt-color-light{
+        color: lighten($reptileGreen, 17%);
+    }
+
+    &.txt-color-dark{
+        color: darken($reptileGreen, 10%);
+    }
+}
+
+.txt-color-turquoise{
+    color: $maximumBlueGreen;
+
+    &.txt-color-light{
+        color: lighten($maximumBlueGreen, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: darken($maximumBlueGreen, 10%);
+    }
+}
+
+.txt-color-cyan{
+    color: $highBlue;
+
+    &.txt-color-light{
+        color: lighten($highBlue, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: darken($highBlue, $darkenPercentage);
+    }
+}
+
+.txt-color-blue{
+    color: $c64NTSC;
+
+    &.txt-color-light{
+        color: lighten($c64NTSC, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: darken($c64NTSC, 15%);
+    }
+}
+
+.txt-color-purple{
+    color: $lighterPurple;
+
+    &.txt-color-light{
+        color: lighten($lighterPurple, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: darken($lighterPurple, $darkenPercentage);
+    }
+}
+
+.txt-color-silver{
+    color: $twinkleBlue;
+
+    &.txt-color-light{
+        color: lighten($twinkleBlue, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: darken($twinkleBlue, $darkenPercentage);
+    }
+}
+
+.txt-color-lightgray{
+    color: $concrete;
+
+    &.txt-color-light{
+        color: lighten($concrete, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: darken($concrete, $darkenPercentage);
+    }
+}
+
+.txt-color-gray{
+    color: $wetAsphalt;
+
+    &.txt-color-light{
+        color: lighten($wetAsphalt, $lightenPercentage);
+    }
+
+    &.txt-color-dark{
+        color: $midnightBlue;
+    }
+}

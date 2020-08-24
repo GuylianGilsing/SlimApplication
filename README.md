@@ -93,7 +93,6 @@ This library makes validation a breeze.
 Webpack is a module bundler that turns our code and assets into static assets.
 
 Webpack uses the following packages:
-* Axios
 * clean-webpack-plugin (DEV)
 * css-loader (DEV)
 * sass (DEV)
