@@ -1,4 +1,18 @@
 {
+    "name": "guyliangilsing/slimapplication",
+    "type": "template",
+    "description": "A simple php boilerplate project using the slim (4) framework and a scss workflow. For more information visit https://github.com/GuylianGilsing/SlimApplication",
+    "keywords": ["template"],
+    "homepage": "https://github.com/GuylianGilsing/SlimApplication",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guylian Gilsing",
+            "email": "gilsingguylian@gmail.com",
+            "homepage": "https://guyliangilsing.me",
+            "role": "developer"
+        }
+    ],
     "require": {
         "slim/slim": "4.*",
         "slim/psr7": "^1.1",
