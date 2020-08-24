@@ -17,9 +17,7 @@
     "url": "https://github.com/GuylianGilsing/SlimApplication/issues"
   },
   "homepage": "https://github.com/GuylianGilsing/SlimApplication#readme",
-  "dependencies": {
-    "axios": "^0.19.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.1",

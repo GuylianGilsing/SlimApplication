@@ -1,0 +1,252 @@
+/*
+
+    This file takes care of layouts
+
+*/
+
+.container{
+    width: 80%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.indent-small{
+    padding: 1rem;
+}
+
+.indent-small-vertical{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.indent-small-horizontal{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.indent-medium{
+    padding: 2rem;
+}
+
+.indent-medium-vertical{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.indent-medium-horizontal{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.indent-large{
+    padding: 3rem;
+}
+
+.indent-large-vertical{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.indent-large-horizontal{
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.indent-small-top{
+    padding-top: 1rem;
+}
+
+.indent-medium-top{
+    padding-top: 2rem;
+}
+
+.indent-large-top{
+    padding-top: 3rem;
+}
+
+.indent-small-bottom{
+    padding-bottom: 1rem;
+}
+
+.indent-medium-bottom{
+    padding-bottom: 2rem;
+}
+
+.indent-large-bottom{
+    padding-bottom: 3rem;
+}
+
+.indent-small-left{
+    padding-left: 1rem;
+}
+
+.indent-medium-left{
+    padding-left: 2rem;
+}
+
+.indent-large-left{
+    padding-left: 3rem;
+}
+
+.indent-small-right{
+    padding-right: 1rem;
+}
+
+.indent-medium-right{
+    padding-right: 2rem;
+}
+
+.indent-large-right{
+    padding-right: 3rem;
+}
+
+.space-small{
+    margin: 1rem;
+}
+
+.space-small-vertical{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.space-small-horizontal{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.space-medium{
+    margin: 2rem;
+}
+
+.space-medium-vertical{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.space-medium-horizontal{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.space-large{
+    margin: 3rem;
+}
+
+.space-large-vertical{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.space-large-horizontal{
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.space-small-top{
+    margin-top: 1rem;
+}
+
+.space-medium-top{
+    margin-top: 2rem;
+}
+
+.space-large-top{
+    margin-top: 3rem;
+}
+
+.space-small-bottom{
+    margin-bottom: 1rem;
+}
+
+.space-medium-bottom{
+    margin-bottom: 2rem;
+}
+
+.space-large-bottom{
+    margin-bottom: 3rem;
+}
+
+.space-small-left{
+    margin-left: 1rem;
+}
+
+.space-medium-left{
+    margin-left: 2rem;
+}
+
+.space-large-left{
+    margin-left: 3rem;
+}
+
+.space-small-right{
+    margin-right: 1rem;
+}
+
+.space-medium-right{
+    margin-right: 2rem;
+}
+
+.space-large-right{
+    margin-right: 3rem;
+}
+
+/* XL screens */
+@media only screen and (min-width: 1201px){
+    .show-on-xl{display: block;}
+    .hide-on-xl{display: none;}
+    .show-on-l{display: none;}
+    .show-on-m{display: none;}
+    .show-on-s{display: none;}
+    .show-on-xs{display: none;}
+}
+
+/* L screens */
+@media only screen and (max-width: 1200px){
+    .show-on-xl{display: none;}
+    .show-on-l{display: block;}
+    .hide-on-l{display: none;}
+    .show-on-m{display: none;}
+    .show-on-s{display: none;}
+    .show-on-xs{display: none;}
+
+    .container{max-width: 100%;}
+}
+
+/* M screens */
+@media only screen and (max-width: 960px){
+    .show-on-xl{display: none;}
+    .show-on-l{display: none;}
+    .show-on-m{display: block;}
+    .hide-on-m{display: none;}
+    .show-on-s{display: none;}
+    .show-on-xs{display: none;}
+
+    .container{width: 90%;}
+}
+
+/* S screens */
+@media only screen and (max-width: 767px){
+    .show-on-xl{display: none;}
+    .show-on-l{display: none;}
+    .show-on-m{display: none;}
+    .show-on-s{display: block;}
+    .hide-on-s{display: none;}
+    .show-on-xs{display: none;}
+}
+
+/* XS screens */
+@media only screen and (max-width: 575px){
+    .show-on-xl{display: none;}
+    .show-on-l{display: none;}
+    .show-on-m{display: none;}
+    .show-on-s{display: none;}
+    .hide-on-xs{display: none;}
+    .show-on-xs{display: block;}
+
+    .container{
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

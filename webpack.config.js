@@ -7,7 +7,7 @@ module.exports = {
         './resources/scss/index.scss'
     ],
     output: {
-        filename: 'js/app.min.js',
+        filename: '',
         path: path.resolve(__dirname, 'public/assets')
     },
     plugins: [
