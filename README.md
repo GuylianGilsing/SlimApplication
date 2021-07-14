@@ -20,6 +20,7 @@ This boilerplate comes with the following:
 
 # Table of contents
 - [Installation](#installation)
+- [Project structure](#project-structure)
 - [Installed packages and dependencies](#installed-packages-and-dependencies)
     - [Backend packages](#backend-packages)
         - [Vlucas/PHPDotenv](#vlucasphpdotenv)
@@ -52,6 +53,22 @@ To install all frontend packages:
 ```
 $ npm install
 ```
+
+# Project structure
+## app folder
+The app folder houses all of your controllers, middleware, and models. PSR-4 autoloading has been set up for the following folders:
+- `./app/controllers/`
+- `./app/controllers/api/`
+- `./app/middleware/`
+- `./app/models/`
+
+## bootstrap
+The bootstrap folder houses all of the files that are used to load (or bootstrap) the project. You can add a new item by creating a new folder and refering to it in the `bootstrap.php` file. PSR-4 autoloading has been set up for the following folders:
+- `./database/migrations/`
+- `./database/seeds/`
+
+## database
+This folder houses all of your migrations and seeds. 
 
 # Installed packages and dependencies
 This boilerplate app setup comes with several backend packages and technologies that hopefully will give your future application a bit more of structure, and makes it overall easier to develop it.
